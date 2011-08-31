@@ -82,7 +82,6 @@ public class CustomDrawableView extends View{
         //color space
         
         //Prerender Redimages
-        new BitmapFactory();
         novas = new Vector<NovaPoint>();
 		myBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.icon);
 		paints = new Paint[30];
