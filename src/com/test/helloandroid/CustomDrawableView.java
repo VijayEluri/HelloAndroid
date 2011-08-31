@@ -115,9 +115,6 @@ public class CustomDrawableView extends View{
 			c.drawBitmap(myBitmap, 0,0, paints[i]);
 			paints[i] = new Paint();
 		}
-		
-		//("res/drawable-hdpi/icon.png");
-        //new BitmapDrawable("res/drawable-/icon.png");
         
         mDrawable = new ShapeDrawable(new OvalShape());
         mDrawable.getPaint().setColor(0xff74AC23);
@@ -126,16 +123,10 @@ public class CustomDrawableView extends View{
     
 
     protected void onDraw(Canvas canvas) {
-       // mDrawable.draw(canvas);
-  //  	Paint p = paints[0];
-    	//p.setColor(0xff74AC23);
-        //canvas.drawCircle(circ_x, circ_y, 100, p);
-    	//canvas.drawBitmap(myBitmap, circ_x, circ_y, p);
     	Vector<Integer> terminate = new Vector<Integer>();
     	for(int i = 0; i < novas.size();i++)
     	{
     		NovaPoint nova = novas.get(i);
-    		//p.setColorFilter(new ColorMatrixColorFilter(matrix));
     		for(int burst = 0; burst < 6; burst++)
     		{
     			canvas.drawBitmap(bitmaps[nova.color][nova.time],
@@ -154,7 +145,6 @@ public class CustomDrawableView extends View{
     	{
     		novas.remove(terminate.get(i)-i);
     	}
-//    	canvas.draw, circ_x, circ_y, p)
     }
 
     @Override
@@ -166,13 +156,7 @@ public class CustomDrawableView extends View{
     		novas.add(new NovaPoint(new Point(
     					           (int)event.getX(i),
     							   (int)event.getY(i)),i));
-    	}//circ_x = (int)event.getX();
-		//circ_y = (int)event.getY();
-		
-		//invalidate();
+    	}
 		return true;
 	}
-    
-//	@Override
-	//public boolean
 }
