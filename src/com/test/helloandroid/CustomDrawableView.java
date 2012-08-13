@@ -18,6 +18,8 @@ import android.view.View;
 
 public class CustomDrawableView extends View{
 
+	int max_colors = 2;
+	
 	public class NovaPoint
 	{
 		Point origin;
@@ -25,7 +27,7 @@ public class CustomDrawableView extends View{
 		int color;
 		NovaPoint(Point start, int color)
 		{
-			this.color = color;
+			this.color = color % max_colors;
 			this.origin = new Point(start);
 			this.time = 0;
 		}
@@ -155,7 +157,7 @@ public class CustomDrawableView extends View{
     	{
     		novas.add(new NovaPoint(new Point(
     					           (int)event.getX(i),
-    							   (int)event.getY(i)),i));
+    							   (int)event.getY(i)), i));
     	}
 		return true;
 	}
