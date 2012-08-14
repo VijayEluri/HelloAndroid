@@ -125,7 +125,6 @@ public class CustomDrawableView extends View{
     
 
     protected void onDraw(Canvas canvas) {
-    	Vector<Integer> terminate = new Vector<Integer>();
     	for(int i = 0; i < novas.size();i++)
     	{
     		NovaPoint nova = novas.get(i);
@@ -140,12 +139,9 @@ public class CustomDrawableView extends View{
     		nova.time+=1;
 			if(nova.time >= 30)
 			{
-				terminate.add(i);
+				novas.remove(nova);
+				i--;
 			}
-    	}
-    	for(int i = 0; i < terminate.size();i++)
-    	{
-    		novas.remove(terminate.get(i)-i);
     	}
     }
 
